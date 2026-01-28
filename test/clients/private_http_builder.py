@@ -22,7 +22,7 @@ class AuthenticationUserSchema(BaseModel):
     password: str   = Field(default=settings.user_data.password)
 
 
-@lru_cache(maxsize=None)
+# @lru_cache(maxsize=None)
 def get_private_http_client(user: AuthenticationUserSchema) -> Client:
     """
     Функция создаёт экземпляр httpx.Client с аутентификацией пользователя.

@@ -1,0 +1,11 @@
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:13 Make [POST] request to "https://apitests.nyc.wf/authorization?username=admin&password=qazWSXedc"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:22 Got response [200] OK from "https://apitests.nyc.wf/authorization?username=admin&password=qazWSXedc"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:13 Make [POST] request to "https://apitests.nyc.wf/authorization?username=admin&password=qazWSXedc"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:22 Got response [200] OK from "https://apitests.nyc.wf/authorization?username=admin&password=qazWSXedc"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:13 Make [POST] request to "https://apitests.nyc.wf/transaction?action=WITHDRAW&amount=150"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:22 Got response [200] OK from "https://apitests.nyc.wf/transaction?action=WITHDRAW&amount=150"
+[32mINFO    [0m BASE_ASSERTIONS:base.py:17 Check response status code equals to "200"
+[32mINFO    [0m TRANSACTION_ASSERTIONS:transaction_assertions.py:20 Check create transaction response
+[32mINFO    [0m BASE_ASSERTIONS:base.py:36 Check object: "result" - equals to "OK"
+[32mINFO    [0m BASE_ASSERTIONS:base.py:36 Check object: "balance" - equals to "9850"
+[32mINFO    [0m SCHEMA_ASSERTIONS:schema.py:20 Validate JSON schema

@@ -17,7 +17,7 @@ def assert_create_transaction_response(query: CreateTransactionQuerySchema, resp
     :param query: Ожидаемые данные транзакции.
     :raises AssertionError: Если хотя бы одно поле не совпадает.
     """
-    logger.info('Check create exercise response')
+    logger.info('Check create transaction response')
 
     assert_equal(actual=response.result,
                  expected='OK',

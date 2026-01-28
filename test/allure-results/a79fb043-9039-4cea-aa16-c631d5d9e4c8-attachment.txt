@@ -1,0 +1,4 @@
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:13 Make [POST] request to "https://apitests.nyc.wf/authorization?username=admin&password=qazWSXedc"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:22 Got response [200] OK from "https://apitests.nyc.wf/authorization?username=admin&password=qazWSXedc"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:13 Make [POST] request to "https://apitests.nyc.wf/transaction?action=WITHDRAW&amount=200"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:22 Got response [401] Unauthorized from "https://apitests.nyc.wf/transaction?action=WITHDRAW&amount=200"

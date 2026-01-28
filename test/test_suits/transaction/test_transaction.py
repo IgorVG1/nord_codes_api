@@ -1,7 +1,6 @@
-from http import HTTPStatus
-
 import pytest, allure
 
+from http import HTTPStatus
 from test.clients.transaction.transaction_client import TransactionClient
 from test.clients.transaction.transaction_schema import CreateTransactionQuerySchema, CreateTransactionResponseSchema
 from test.test_suits.transaction.transaction_assertions import assert_create_transaction_response
