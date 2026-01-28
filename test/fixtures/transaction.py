@@ -1,7 +1,8 @@
 import pytest
 from pydantic import BaseModel
 
-from test.clients.transaction.transaction_client import TransactionClient, get_transaction_client
+from test.clients.transaction.transaction_client import TransactionClient, get_transaction_client, \
+    get_unauthorized_transaction_client
 from test.clients.transaction.transaction_schema import CreateTransactionQuerySchema, CreateTransactionResponseSchema
 from test.fixtures.authentication import UserFixture
 
@@ -24,6 +25,17 @@ def transaction_client(function_user: UserFixture) -> TransactionClient:
     :return: TransactionClient: Экземпляр TransactionClient с уже настроенным HTTP-клиентом.
     """
     return get_transaction_client(user=function_user.authentication_user)
+
+
+@pytest.fixture(scope='function')
+def unauthorized_transaction_client() -> TransactionClient:
+    """
+    Фикстура, которая возвращает настроенный клиент для работы с /transaction.
+
+    :param function_user: Фикстура с учетными данными пользователя.
+    :return: TransactionClient: Экземпляр TransactionClient с уже настроенным HTTP-клиентом.
+    """
+    return get_unauthorized_transaction_client()
 
 
 @pytest.fixture(scope='function')

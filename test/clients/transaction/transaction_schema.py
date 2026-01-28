@@ -10,8 +10,8 @@ class CreateTransactionQuerySchema(BaseModel):
         amount: int - Сумма ставки
     """
 
-    action: str     = Field(default='WITHDRAW', description='Действие пользователя')
-    amount: int     = Field(default_factory=fake.bet, description='Сумма ставки')
+    action: str         = Field(default='WITHDRAW', description='Действие пользователя')
+    amount: int | str   = Field(default_factory=fake.bet, description='Сумма ставки')
 
 
 class CreateTransactionResponseSchema(BaseModel):
@@ -24,3 +24,15 @@ class CreateTransactionResponseSchema(BaseModel):
 
     result: str     = Field(description='Статус запроса на создание транзакции')
     balance: int    = Field(description='Оставшийся баланс пользователя')
+
+
+class ErrorCreateTransactionResponseSchema(BaseModel):
+    """
+    Описание структуры ответа с ошибкой создания транзакции.
+    Attributes:
+        result: str
+        message: str
+    """
+
+    result: str
+    message: str

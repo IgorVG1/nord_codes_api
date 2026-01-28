@@ -3,6 +3,7 @@ from httpx import Response
 
 from test.clients.api_client import APIClient
 from test.clients.private_http_builder import get_private_http_client, AuthenticationUserSchema
+from test.clients.public_http_builder import get_public_http_client
 from test.clients.transaction.transaction_schema import CreateTransactionQuerySchema, CreateTransactionResponseSchema
 from test.tools.routes import APIRoutes
 
@@ -42,3 +43,12 @@ def get_transaction_client(user: AuthenticationUserSchema) -> TransactionClient:
     :return: Готовый к использованию TransactionClient.
     """
     return TransactionClient(client=get_private_http_client(user=user))
+
+
+def get_unauthorized_transaction_client() -> TransactionClient:
+    """
+    Функция создаёт экземпляр TransactionClient с уже настроенным HTTP-клиентом без авторизации.
+
+    :return: Готовый к использованию TransactionClient.
+    """
+    return TransactionClient(client=get_public_http_client())
