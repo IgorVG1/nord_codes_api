@@ -1,0 +1,7 @@
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:13 Make [POST] request to "https://apitests.nyc.wf/authorization?username=admin&password=1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+[32mINFO    [0m HTTP_CLIENT:event_hooks.py:22 Got response [403] Forbidden from "https://apitests.nyc.wf/authorization?username=admin&password=1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+[32mINFO    [0m BASE_ASSERTIONS:base.py:17 Check response status code equals to "403"
+[32mINFO    [0m AUTHORIZATION_ASSERTIONS:authentication_assertions.py:19 Check invalid authorization response with incorrect username or password
+[32mINFO    [0m BASE_ASSERTIONS:base.py:36 Check object: "result" - equals to "ERROR"
+[32mINFO    [0m BASE_ASSERTIONS:base.py:36 Check object: "message" - equals to "Invalid credentials"
+[32mINFO    [0m SCHEMA_ASSERTIONS:schema.py:20 Validate JSON schema

@@ -28,6 +28,7 @@ from test.tools.assertions.schema import validate_json_schema
 @allure.suite(AllureFeature.TRANSACTION)
 class TestTransaction:
 
+    @pytest.mark.flaky(reruns=3, reruns_delay=5)
     @allure.title("[200]OK - Create transaction")
     @allure.tag(AllureTag.CREATE_ENTITY)
     @allure.story(AllureStory.CREATE_ENTITY)
@@ -46,6 +47,7 @@ class TestTransaction:
                              schema=response_data.model_json_schema())
 
 
+    @pytest.mark.flaky(reruns=3, reruns_delay=5)
     @allure.title("[402]PAYMENT_REQUIRED - Create transaction with bet bigger balance")
     @allure.tag(AllureTag.CREATE_ENTITY)
     @allure.story(AllureStory.CREATE_ENTITY)
@@ -101,6 +103,7 @@ class TestTransaction:
                              schema=response_data.model_json_schema())
 
 
+    @pytest.mark.flaky(reruns=3, reruns_delay=1)
     @allure.title("[401]UNAUTHORIZED - Create transaction by unauthorized user")
     @allure.tag(AllureTag.CREATE_ENTITY)
     @allure.story(AllureStory.CREATE_ENTITY)

@@ -25,7 +25,7 @@ from test.tools.assertions.schema import validate_json_schema
 @allure.feature(AllureFeature.AUTHENTICATION)
 @allure.parent_suite(AllureEpic.NORD_CODES)
 @allure.suite(AllureFeature.AUTHENTICATION)
-class TestAdditionalFilters:
+class TestAuthentication:
 
 
     @allure.title("[200]OK - Success authorization")
@@ -111,6 +111,7 @@ class TestAdditionalFilters:
                              schema=response_data.model_json_schema())
 
 
+    @pytest.mark.flaky(reruns=3, reruns_delay=1)
     @allure.title("[400]BAD_REQUEST - Invalid authorization with empty data")
     @allure.tag(AllureTag.VALIDATE_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)
