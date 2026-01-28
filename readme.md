@@ -56,3 +56,8 @@ python -m src.main
 > Press **[Ctrl]** + **[C]** to exit
 
 ---
+
+## V. Просмотр отчета о найденных ошибках в файле: 
+> bug_report.docx
+
+---
