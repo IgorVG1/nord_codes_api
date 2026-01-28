@@ -24,3 +24,14 @@ class AuthorizationResponseSchema(BaseModel):
     result: str
     token: str
     balance: int
+
+
+class InvalidAuthorizationResponseSchema(BaseModel):
+    """
+    Описание структуры ответа на некорректную аутентификацию.
+    Attributes:
+        result: str
+        message: str
+    """
+    result: str
+    message: str
