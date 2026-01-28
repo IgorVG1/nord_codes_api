@@ -61,3 +61,12 @@ python -m src.main
 > bug_report.docx
 
 ---
+
+## VI. Коллекция в Postman
+### 1. Файл формата JSON для прямого импорта:
+> nord_codes.postman_collection.json
+
+### 2. Ссылка для просмотра коллекции:
+> https://igornevskiy00-5695112.postman.co/workspace/%D0%98%D0%B3%D0%BE%D1%80%D1%8C-%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9's-Workspace~1d5cf416-97d4-466c-843c-d78a82ab5f2b/collection/49077959-861170ef-1fe5-44b8-a305-0bc4d3c64823?action=share&source=copy-link&creator=49077959
+
+---

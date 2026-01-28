@@ -1,0 +1,2249 @@
+{
+  "info": {
+    "_postman_id": "861170ef-1fe5-44b8-a305-0bc4d3c64823",
+    "name": "nord_codes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49077959",
+    "_collection_link": "https://go.postman.co/collection/49077959-861170ef-1fe5-44b8-a305-0bc4d3c64823?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "[POST] /authorization",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Парсим ответ\r",
+              "var response = pm.response.json();\r",
+              "\r",
+              "// Извлекаем access token\r",
+              "var token = response.token;\r",
+              "\r",
+              "// Устанавливаем переменную коллекции\r",
+              "pm.collectionVariables.set(\"token\", token);\r",
+              "\r",
+              "// Для отладки можно вывести сообщение\r",
+              "console.log(\"token установлен: \" + token);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "content-type": true,
+          "accept": true
+        }
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/authorization?username=admin&password=qazWSXedc",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "authorization"
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "admin"
+            },
+            {
+              "key": "password",
+              "value": "qazWSXedc"
+            },
+            {
+              "key": "username",
+              "value": "infinity@",
+              "description": "invalid value",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "infinity@",
+              "description": "invalid value",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": null,
+              "description": "invalid value",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": null,
+              "description": "invalid value",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "Эндпоинт авторизации.\n\nПринимает логин и пароль, возвращает токен доступа.\n\nТокен используется для запросов к другим эндпоинтам.\n\nЖивет 15 минут с момента последнего использования."
+      },
+      "response": [
+        {
+          "name": "[200] OK",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authorization?username=admin&password=qazWSXedc",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin"
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 06:53:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=0; includeSubDomains"
+            },
+            {
+              "key": "p3p",
+              "value": "CP=\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\""
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=vTPhiyYETHk%2Fwe3ERP5BsyArB0cfGEZrigCgWUrYEcz%2Blbjb2O5krfxFBprJGKTv8SYa5XJR0xWgfrZN%2BULBEl8tlm6iPdAJdE%2Bl8lvbCQ%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c4e93366b8fda3e-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"OK\",\n    \"token\": \"08ADBDDA4F8A435B879FF443EC71D1FB\",\n    \"balance\": 10000\n}"
+        },
+        {
+          "name": "[403]Forbidden - incorrect username",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authorization?username=admin&password=infinity@",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin"
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "infinity@",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 12:49:26 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=TVYO9MMg5FouRi8gvmFrV3O5viT2mv5DLDByQ9lRqGASjoiiQrY07RGVf%2Fw4z7hkieGz2fTG8sAYWPHu%2FF%2FCGKA8LyY0kpt1xH4rL5Fqcw%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c509c1f2857f035-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Invalid credentials\"\n}"
+        },
+        {
+          "name": "[403]Forbidden - incorrect password",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authorization?password=qazWSXedc&username=infinity@",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc"
+                },
+                {
+                  "key": "username",
+                  "value": "infinity@",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 12:50:09 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wD5ObqbQYnroEjXsEdD4q3JsJgq%2BVQEkUEdNza897EO0sW1I3M6WC7Y%2BNIlHoUoa%2B5rAcQxX6RI3v%2F77rvhPNIYEyoWiP0ZNdiTWBtlV4Q%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c509d272a41d0e1-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Invalid credentials\"\n}"
+        },
+        {
+          "name": "[400]Bad Request- empty username",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authorization?password=qazWSXedc&username",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc"
+                },
+                {
+                  "key": "username",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": null,
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 12:52:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ey3%2Fav4Pr1yKAwSYmjG2DkBhNa3b9eAjGPgST83u%2BHPyWnfLnNRdaAXXx1roRvmpuAGA%2BluXKZUVAL1vV11BqhPkmZKTdu%2FkJXLDQfYvxQ%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c509ff199d56999-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"username: must not be blank\"\n}"
+        },
+        {
+          "name": "[400]Bad Request- empty password",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authorization?username=admin&password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin"
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 12:51:13 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=igA5zFL60eMctZnC1Rq7I9BNyKeqUA%2FXkq9LBkXJjP2JUnE4cylAPl3dAONtsIkHUUPkt9urZ%2FmGU0JBoepbAZTiXvN46JrqzToZiaYbmA%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c509eb718af7601-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"password: must not be blank\"\n}"
+        },
+        {
+          "name": "[400]Bad Request- empty data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/authorization?username&password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": null,
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": null,
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 12:52:39 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=rRSG75E4FSM454abmxzW4h0rQasFinLbSIR5avHrLnJO037YPr6RDZ1tSeIPQQR9HZfG7q38l63xysL0g12a0iUVo4z5M3NXx5eX6kvv7g%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50a0d2ca08dfd7-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"username: must not be blank; password: must not be blank\"\n}"
+        },
+        {
+          "name": "[500]Internal Server Error - data in JSON",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"qazWSXedc\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/authorization",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "authorization"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "admin",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "qazWSXedc",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "infinity@",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "username",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 12:54:10 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=nt9guN60ucPTsh9DQAWT9V4cCZOnT6NtgnCgAMaR87NQ4mizjQsaNKS4QgMvSu4YzWfgckhwGnvMIHYJ0UWFNtqRZ6RHBgYYWuxnQqtKjw%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50a30c9cb3d4fd-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Internal Server Error\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "[POST] /transaction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/transaction?action=WITHDRAW&amount=100",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "transaction"
+          ],
+          "query": [
+            {
+              "key": "action",
+              "value": "WITHDRAW"
+            },
+            {
+              "key": "amount",
+              "value": "100"
+            },
+            {
+              "key": "action",
+              "value": "withdraw",
+              "description": "invalid value",
+              "disabled": true
+            },
+            {
+              "key": "amount",
+              "value": "&",
+              "description": "invalid value",
+              "disabled": true
+            },
+            {
+              "key": "amount",
+              "value": " ",
+              "description": "invalid value (empty)",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "Эндпоинт для совершения транзакций. Требует авторизационный токен.\n\nЗаголовки:  \n\\- Content-Type: application/x-www-form-urlencoded  \n\\- Accept: application/json  \n\\- X-Api-Key:\n\nПараметры запроса:   \n\\- action (required) — действие пользователя. Поддерживаемое значение: withdraw  \n\\- amount (required) — сумма ставки"
+      },
+      "response": [
+        {
+          "name": "[200] OK",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transaction?action=WITHDRAW&amount=100",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "WITHDRAW",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "100",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Tue, 27 Jan 2026 16:12:04 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=0; includeSubDomains"
+            },
+            {
+              "key": "p3p",
+              "value": "CP=\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\""
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Hp22zC3FGGDdFByjB5KQc4AVRwjnyaR194IyToTeD3TERkKwUPo%2FuGARrsbtF2Ouh7%2F7N9Go6S6Km6MGbInzKAfH6u4IBWKOVVHgobhmhg%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c4987902b96e849-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"OK\",\n    \"balance\": 9900\n}"
+        },
+        {
+          "name": "[400] Bad Request - \"action\": \"withdraw\"",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transaction?amount=100&action=withdraw",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "WITHDRAW",
+                  "disabled": true
+                },
+                {
+                  "key": "amount",
+                  "value": "100"
+                },
+                {
+                  "key": "action",
+                  "value": "withdraw",
+                  "description": "invalid value"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 13:09:30 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=hzsBIUGmpeQGEx%2Bd6OMzpzXlUN614mNYIGxVU22vLOFbE8KSJ6WpuJyjKwsLQJL1DU3Tg8MGpFdzsDQCqcIQShu1jB3mTUE%2FIRocSO%2BEVw%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50b97fe8170a0e-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"action: invalid action 'withdraw'. Allowed: [WITHDRAW]\"\n}"
+        },
+        {
+          "name": "[402] Payment Required",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transaction?action=WITHDRAW&amount=11000",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "WITHDRAW"
+                },
+                {
+                  "key": "amount",
+                  "value": "11000"
+                },
+                {
+                  "key": "action",
+                  "value": "withdraw",
+                  "description": "invalid value",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "Payment Required",
+          "code": 402,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 13:19:24 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=TcaUf6S72xQqA6Qi%2FQz5Du2buqV3CSutqdYR%2FVSYhB9BX8Xfjpvs1yTmESlZqDHGv%2B9JQaM0GahqsLbyp2fUoi1YZmFRIBdg9TjCInJF8g%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50c7fef9cdf78c-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Not enough money\"\n}"
+        },
+        {
+          "name": "[400] Bad Request - empty amount",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transaction?action=WITHDRAW&amount= ",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "WITHDRAW"
+                },
+                {
+                  "key": "amount",
+                  "value": "100",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "withdraw",
+                  "description": "invalid value",
+                  "disabled": true
+                },
+                {
+                  "key": "amount",
+                  "value": "@",
+                  "description": "invalid value",
+                  "disabled": true
+                },
+                {
+                  "key": "amount",
+                  "value": " ",
+                  "description": "invalid value (empty)"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 13:29:21 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=8LJUh%2F4HJrhk8%2Ff9BWsgGHMSiCc%2BoIVk3i0D4xyQZz6dykCB4HHv8pyB2FHHDTX5Gabnw%2FjGyWZ9kS4j3lATEceE9kGhY4qW3xQ0NUIIrQ%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50d694fdeaf4d8-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"amount: must not be null\"\n}"
+        },
+        {
+          "name": "[400] Bad Request - invalid amount",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transaction?action=WITHDRAW&amount=@",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "WITHDRAW"
+                },
+                {
+                  "key": "amount",
+                  "value": "100",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "withdraw",
+                  "description": "invalid value",
+                  "disabled": true
+                },
+                {
+                  "key": "amount",
+                  "value": "@",
+                  "description": "invalid value"
+                },
+                {
+                  "key": "amount",
+                  "value": " ",
+                  "description": "invalid value (empty)",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 13:31:19 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=M%2BSFgsgerYsUYli%2Fm0Q8pLfpY1F%2Fn07%2FC5RuVoivG85WC5hcy52Kkrjp5LiX8GjumN8AU7iSXPNLfzXmIBQS7biCuBbf4WBfzbgq%2B1iLYA%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50d9751e32b56b-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"amount: Failed to convert value of type 'java.lang.String' to required type 'java.math.BigDecimal'; Character @ is neither a decimal digit number, decimal point, nor \\\"e\\\" notation exponential mark.\"\n}"
+        },
+        {
+          "name": "[401] Unauthorized",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transaction?action=WITHDRAW&amount=100",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "WITHDRAW"
+                },
+                {
+                  "key": "amount",
+                  "value": "100"
+                },
+                {
+                  "key": "action",
+                  "value": "withdraw",
+                  "description": "invalid value",
+                  "disabled": true
+                },
+                {
+                  "key": "amount",
+                  "value": "&",
+                  "description": "invalid value",
+                  "disabled": true
+                },
+                {
+                  "key": "amount",
+                  "value": " ",
+                  "description": "invalid value (empty)",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 13:45:03 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "57"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=eEwMOSwdRhyKun1eFqrfjhN6WbmOLZu2sz5VltNlusTI1EUdb9j1sXLnp91ZENqvNLZzEmiLuKU2UmClr%2BvlL60s3IC2PA1kdMj2H2HHYw%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c50ed92f9025288-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Missing or invalid API Key\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "[GET] /logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/logout",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "logout"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "[200] OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 06:20:44 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=0; includeSubDomains"
+            },
+            {
+              "key": "p3p",
+              "value": "CP=\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\""
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=bcYy1dtJmMiDUAOFQMykX34tQrKcV2TXKmfZizKk0i7y6em%2Fb5SozsRLeTZVzzP590WUtwxYTuCHGIJ0VsBHnaSZEoZR7lzQJasbJB44yw%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c4e62b76967c783-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"OK\"\n}"
+        },
+        {
+          "name": "[401] Unauthorized",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 06:19:04 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "57"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Qj0P3YZzzM2JNNn2LULfRljlRakD32ig19GmBv8k8v8XI9AxL1ga1IN%2B8Gny5jL2J5Y8YzUeZlJ19hxGMXQRFsvfZBvWzWST5w%2FVKEKnaw%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c4e60467a3c1579-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Missing or invalid API Key\"\n}"
+        },
+        {
+          "name": "[405] Method Not Allowed",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "status": "Method Not Allowed",
+          "code": 405,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 28 Jan 2026 14:04:50 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Origin"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "x-frame-options",
+              "value": "DENY"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=4gIpHOLlwXdVh5zEmZKPfBkCxyEdvDbBXueyIcLTeE0zED3O3QtQdLLBeZ5kfUUUwzysYpZhEl%2B43CL79MtC%2F6d%2BRj3ZMW0q0DVkn8wcsg%3D%3D\"}]}"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "9c510a902fbec4ef-HEL"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"result\": \"ERROR\",\n    \"message\": \"Request method 'GET' is not supported. Supported methods are: [POST]\"\n}"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{token}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "X-Api-Key",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
