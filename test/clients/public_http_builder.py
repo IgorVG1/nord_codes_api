@@ -1,0 +1,19 @@
+from httpx import Client
+
+from test.clients.event_hooks import log_request_event_hook, log_response_event_hook
+from test.config import settings
+
+
+def get_public_http_client() -> Client:
+    """
+    Функция создаёт экземпляр httpx.Client с базовыми настройками.
+
+    :return: Готовый к использованию объект httpx.Client.
+    """
+    return Client(
+        event_hooks={"request": [log_request_event_hook],
+                     "response": [log_response_event_hook]},
+        base_url=settings.http_client.client_url,
+        timeout=settings.http_client.timeout,
+        headers={"Content-Type": "application/x-www-form-urlencoded"}
+    )
