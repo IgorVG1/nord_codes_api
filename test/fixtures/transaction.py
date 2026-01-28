@@ -32,7 +32,6 @@ def unauthorized_transaction_client() -> TransactionClient:
     """
     Фикстура, которая возвращает настроенный клиент для работы с /transaction.
 
-    :param function_user: Фикстура с учетными данными пользователя.
     :return: TransactionClient: Экземпляр TransactionClient с уже настроенным HTTP-клиентом.
     """
     return get_unauthorized_transaction_client()

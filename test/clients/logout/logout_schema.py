@@ -9,3 +9,15 @@ class LogoutResponseSchema(BaseModel):
     """
 
     result: str = Field(description='Статус запроса на завершение сессии')
+
+
+class ErrorLogoutResponseSchema(BaseModel):
+    """
+    Описание структуры ответа с ошибкой авторизации.
+    Attributes:
+        result: str
+        message: str
+    """
+
+    result: str
+    message: str

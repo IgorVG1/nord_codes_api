@@ -4,6 +4,7 @@ from httpx import Response
 from test.clients.api_client import APIClient
 from test.clients.logout.logout_schema import LogoutResponseSchema
 from test.clients.private_http_builder import get_private_http_client, AuthenticationUserSchema
+from test.clients.public_http_builder import get_public_http_client
 from test.tools.routes import APIRoutes
 
 
@@ -39,3 +40,12 @@ def get_logout_client(user: AuthenticationUserSchema) -> LogoutClient:
     :return: Готовый к использованию LogoutClient.
     """
     return LogoutClient(client=get_private_http_client(user=user))
+
+
+def get_unauthorized_logout_client() -> LogoutClient:
+    """
+    Функция создаёт экземпляр LogoutClient с уже настроенным HTTP-клиентом без авторизации.
+
+    :return: Готовый к использованию LogoutClient.
+    """
+    return LogoutClient(client=get_public_http_client())
