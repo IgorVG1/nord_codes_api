@@ -11,9 +11,7 @@ git clone https://github.com/IgorVG1/nord_codes_api.git
 ```bash
 cd nord_codes_api
 ```
-```bash
-cd nord_codes_api
-```
+---
 
 ## II. Подготовка к запуску авто-тестов
 ### 1. Создание виртуального окружения
@@ -24,7 +22,37 @@ python -m venv venv
 ```bash
 venv/Scripts/activate
 ```
-### Установка необходимых зависимостей
+### 3. Установка необходимых зависимостей
 ```bash
 pip install -r requirements.txt
 ```
+---
+
+## III. Запуск авто-тестов с генерацией allure-отчета
+### 1. Запуск авто-тестов
+```bash
+pytest -m regression --alluredir=test/allure-results
+```
+### 2. Просмотр allure-отчета в браузере
+```bash
+allure serve ./test/allure-results
+```
+---
+
+## IV. Просмотр исправлений предполагаемых ошибок в архитектуре тестового REST API
+### 1. Закрытия allure-отчета
+> Press **[Ctrl]** + **[C]** to exit
+
+> Enter **"y"** in console
+
+### 2. Локальный запуск demo-API с исправлениями
+```bash
+python -m src.main
+```
+### 3. В браузере открыть страницу по адресу:
+> http://127.0.0.1:8000/docs
+
+### 4. После завершения просмотра изменений
+> Press **[Ctrl]** + **[C]** to exit
+
+---
