@@ -1,5 +1,5 @@
 allure-pytest==2.15.3
-Faker==40.1.
+Faker==40.1.2
 fastapi==0.128.0
 httpx==0.28.1
 jsonschema==4.26.0
